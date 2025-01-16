@@ -26,7 +26,31 @@
     {
         "id": "0ec30a985bffe47f",
         "type": "tab",
-        "label": "Flow 1",
+        "label": "Switch",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "aa0be5d8fb5b13e9",
+        "type": "tab",
+        "label": "Change",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a6d33dd70f458e63",
+        "type": "tab",
+        "label": "Range",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7e3cb7c4656eebe4",
+        "type": "tab",
+        "label": "Split",
         "disabled": false,
         "info": "",
         "env": []
@@ -186,7 +210,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "{\"Details\":{\"Name\":\"Nikki\",\"Age\":33,\"City\":\"Lipa\",\"Job\":{\"Position\":\"Manager\",\"City\":\"Taysan\",\"Tenure\":\"12\"}}}",
+        "payload": "{\"General\":{\"Details\":{\"Name\":\"Nikki\",\"Age\":33,\"City\":\"Lipa\",\"Job\":{\"Position\":\"Manager\",\"City\":\"Taysan\",\"Tenure\":\"12\"}}}}",
         "payloadType": "json",
         "x": 90,
         "y": 360,
@@ -197,13 +221,62 @@
         ]
     },
     {
-        "id": "9eaa782067da14eb",
+        "id": "a78c4163c78cbd04",
         "type": "inject",
         "z": "a3082a0f65c9312b",
         "name": "",
         "props": [
             {
                 "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "Array",
+        "payload": "[45,10,21,41]",
+        "payloadType": "json",
+        "x": 130,
+        "y": 40,
+        "wires": [
+            [
+                "2571978a4b0f9464"
+            ]
+        ]
+    },
+    {
+        "id": "2571978a4b0f9464",
+        "type": "debug",
+        "z": "a3082a0f65c9312b",
+        "name": "debug 14",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "73bc2451757d2a5d",
+        "type": "inject",
+        "z": "a3082a0f65c9312b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
             }
         ],
         "repeat": "",
@@ -211,32 +284,149 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "{\"Details\":{\"Name\":\"Nikki\",\"Age\":33,\"City\":\"Lipa\",\"Job\":{\"Position\":\"Manager\",\"City\":\"Taysan\",\"Tenure\":\"12\"}}}",
+        "payload": "{\"General\":{\"Details\":{\"Name\":\"Nikki\",\"Age\":33,\"City\":\"Lipa\",\"Job\":{\"Position\":\"Manager\",\"City\":\"Taysan\",\"Tenure\":\"12\"}}}}",
         "payloadType": "json",
-        "x": 90,
-        "y": 440,
+        "x": 94,
+        "y": 556,
         "wires": [
             [
-                "481cfe7f81ec14d9"
+                "78836a00e34a04ec"
             ]
         ]
     },
     {
-        "id": "481cfe7f81ec14d9",
+        "id": "78836a00e34a04ec",
         "type": "debug",
         "z": "a3082a0f65c9312b",
-        "name": "debug 4",
+        "name": "debug 15",
         "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 430,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "21f3d08b4b873248",
+        "type": "comment",
+        "z": "a3082a0f65c9312b",
+        "name": "json injection",
+        "info": "",
+        "x": 90,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "fce5bef050a8c963",
+        "type": "inject",
+        "z": "a3082a0f65c9312b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"General\":{\"Details\":{\"Name\":\"Nikki\",\"Age\":33,\"City\":\"Lipa\",\"Job\":{\"Position\":\"Manager\",\"City\":\"Taysan\",\"Tenure\":\"12\"}}}}",
+        "payloadType": "json",
+        "x": 90,
+        "y": 420,
+        "wires": [
+            [
+                "09d2d9b50bfae6b7"
+            ]
+        ]
+    },
+    {
+        "id": "70b443ed47c9d01a",
+        "type": "inject",
+        "z": "a3082a0f65c9312b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"General\":{\"Details\":{\"Name\":\"Nikki\",\"Age\":33,\"City\":\"Lipa\",\"Job\":{\"Position\":\"Manager\",\"City\":\"Taysan\",\"Tenure\":\"12\"}}}}",
+        "payloadType": "json",
+        "x": 90,
+        "y": 480,
+        "wires": [
+            [
+                "46d2e1c00656dbe9"
+            ]
+        ]
+    },
+    {
+        "id": "46d2e1c00656dbe9",
+        "type": "debug",
+        "z": "a3082a0f65c9312b",
+        "name": "debug 16",
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "payload.Details.Name",
+        "complete": "payload.General.Details.Job.City",
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
         "x": 440,
-        "y": 440,
+        "y": 460,
         "wires": []
+    },
+    {
+        "id": "6e613f7888d2d64c",
+        "type": "debug",
+        "z": "a3082a0f65c9312b",
+        "name": "debug 17",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "73df09ccfdb2faa7",
+        "type": "link in",
+        "z": "a3082a0f65c9312b",
+        "name": "link in 2",
+        "links": [
+            "46b95c56c0a61468"
+        ],
+        "x": 155,
+        "y": 780,
+        "wires": [
+            [
+                "6e613f7888d2d64c"
+            ]
+        ]
     },
     {
         "id": "cd49b122ef73e97f",
@@ -273,7 +463,7 @@
         "type": "debug",
         "z": "5c580b763f8d6311",
         "name": "debug 6",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -292,7 +482,8 @@
         "name": "LinkOut",
         "mode": "link",
         "links": [
-            "1de651941a5eebb4"
+            "1de651941a5eebb4",
+            "73df09ccfdb2faa7"
         ],
         "x": 325,
         "y": 220,
@@ -319,7 +510,7 @@
         "type": "debug",
         "z": "5c580b763f8d6311",
         "name": "debug 7",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -334,7 +525,7 @@
         "id": "1db705994d314a4f",
         "type": "function",
         "z": "97b79648ae0519e6",
-        "name": "function 1",
+        "name": "First Call",
         "func": "var p = msg.payload;\nmsg.payload =p;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
@@ -343,7 +534,7 @@
         "finalize": "",
         "libs": [],
         "x": 420,
-        "y": 140,
+        "y": 60,
         "wires": [
             [
                 "2bc036e77b0bc1f5"
@@ -369,10 +560,10 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 160,
-        "y": 140,
+        "payload": "Hello World ",
+        "payloadType": "str",
+        "x": 150,
+        "y": 60,
         "wires": [
             [
                 "1db705994d314a4f"
@@ -383,23 +574,24 @@
         "id": "2bc036e77b0bc1f5",
         "type": "debug",
         "z": "97b79648ae0519e6",
-        "name": "debug 8",
+        "name": "Output",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 760,
-        "y": 140,
+        "x": 770,
+        "y": 60,
         "wires": []
     },
     {
         "id": "cb11d40724a58844",
         "type": "inject",
         "z": "97b79648ae0519e6",
-        "name": "",
+        "name": "Details Input",
         "props": [
             {
                 "p": "payload"
@@ -412,8 +604,8 @@
         "topic": "",
         "payload": "{\"Details\":{\"Name\":\"Nikki\",\"Age\":13,\"City\":\"Lipa\",\"Job\":{\"Position\":\"Manager\",\"City\":\"Taysan\",\"Tenure\":\"12\"}}}",
         "payloadType": "json",
-        "x": 130,
-        "y": 280,
+        "x": 150,
+        "y": 300,
         "wires": [
             [
                 "d242823d33e0f783"
@@ -424,65 +616,7 @@
         "id": "0efb395c1be1f2e7",
         "type": "debug",
         "z": "97b79648ae0519e6",
-        "name": "debug 5",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload.Details.Age",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 520,
-        "y": 480,
-        "wires": []
-    },
-    {
-        "id": "d242823d33e0f783",
-        "type": "function",
-        "z": "97b79648ae0519e6",
-        "name": "function 1",
-        "func": "var p = msg.payload.Details.Age;\nmsg.payload =p\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 380,
-        "y": 280,
-        "wires": [
-            [
-                "2495bf3e19c5db1f",
-                "0efb395c1be1f2e7"
-            ]
-        ]
-    },
-    {
-        "id": "2495bf3e19c5db1f",
-        "type": "function",
-        "z": "97b79648ae0519e6",
-        "name": "function 2",
-        "func": "var p = msg.payload;\n\nif (p > 31)\n{\n    msg.payload =true;\n    return msg;\n}\nelse \n{\n    msg.payload =false;\n    return msg;\n}\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 600,
-        "y": 340,
-        "wires": [
-            [
-                "5d6d416dbd4462d1"
-            ]
-        ]
-    },
-    {
-        "id": "5d6d416dbd4462d1",
-        "type": "debug",
-        "z": "97b79648ae0519e6",
-        "name": "debug 9",
+        "name": "Name",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -491,81 +625,31 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 840,
-        "y": 340,
+        "x": 630,
+        "y": 240,
         "wires": []
     },
     {
-        "id": "168a831c88b72d01",
-        "type": "inject",
-        "z": "97b79648ae0519e6",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 140,
-        "y": 660,
-        "wires": [
-            [
-                "b1c2a2690c303d99"
-            ]
-        ]
-    },
-    {
-        "id": "9bd496e2ea132a43",
-        "type": "inject",
-        "z": "97b79648ae0519e6",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 120,
-        "y": 800,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "b1c2a2690c303d99",
+        "id": "d242823d33e0f783",
         "type": "function",
         "z": "97b79648ae0519e6",
-        "name": "function 3",
-        "func": "var msg1 ={payload : \"Nikki\"};\nvar msg2 ={payload : \"33\"};\nreturn [msg1 ,msg2];",
-        "outputs": 2,
-        "timeout": "3",
+        "name": "Segregate Output",
+        "func": "var p1 = {payload: msg.payload.Details.Name};\nvar p2 = {payload: msg.payload.Details.Age};\nvar p3 = {payload: msg.payload.Details.City};\nvar p4 = {payload: msg.payload.Details.Job.Position};\nreturn [p1,p2,p3,p4];",
+        "outputs": 4,
+        "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 420,
-        "y": 660,
+        "x": 370,
+        "y": 300,
         "wires": [
+            [
+                "0efb395c1be1f2e7"
+            ],
+            [
+                "5d6d416dbd4462d1"
+            ],
             [
                 "6aafc6b9f1cd7a1b"
             ],
@@ -575,11 +659,11 @@
         ]
     },
     {
-        "id": "6aafc6b9f1cd7a1b",
+        "id": "5d6d416dbd4462d1",
         "type": "debug",
         "z": "97b79648ae0519e6",
-        "name": "debug 10",
-        "active": false,
+        "name": "Age",
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -587,15 +671,32 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 820,
-        "y": 640,
+        "x": 630,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "6aafc6b9f1cd7a1b",
+        "type": "debug",
+        "z": "97b79648ae0519e6",
+        "name": "City",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 320,
         "wires": []
     },
     {
         "id": "f0fe4aa299b0f2a9",
         "type": "debug",
         "z": "97b79648ae0519e6",
-        "name": "debug 11",
+        "name": "Position",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -604,40 +705,269 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 780,
-        "y": 740,
+        "x": 640,
+        "y": 360,
         "wires": []
     },
     {
-        "id": "6c89d0bfb20fd2fb",
+        "id": "fa504042c7f7bb6c",
+        "type": "inject",
+        "z": "97b79648ae0519e6",
+        "name": "String Input",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Nikki",
+        "payloadType": "str",
+        "x": 130,
+        "y": 160,
+        "wires": [
+            [
+                "c1a75bc4fd615166"
+            ]
+        ]
+    },
+    {
+        "id": "c1a75bc4fd615166",
+        "type": "function",
+        "z": "97b79648ae0519e6",
+        "name": "Process Input",
+        "func": "var p = msg.payload;\nmsg.payload = p.length;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 160,
+        "wires": [
+            [
+                "c284d3f45c592b6d"
+            ]
+        ]
+    },
+    {
+        "id": "c284d3f45c592b6d",
+        "type": "function",
+        "z": "97b79648ae0519e6",
+        "name": "Condition ",
+        "func": "var s  = msg.payload;\n\nif (s > 3)\n{\n    msg.payload =true;\n}\nelse\n{\n    msg.payload =false;\n}\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 160,
+        "wires": [
+            [
+                "732c894cc3ecd1c8"
+            ]
+        ]
+    },
+    {
+        "id": "732c894cc3ecd1c8",
+        "type": "function",
+        "z": "97b79648ae0519e6",
+        "name": "Set Topic ",
+        "func": "var t = \"Result\";\nmsg.topic =t;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 160,
+        "wires": [
+            [
+                "a017307a0d27475b"
+            ]
+        ]
+    },
+    {
+        "id": "a017307a0d27475b",
+        "type": "debug",
+        "z": "97b79648ae0519e6",
+        "name": "Output",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 850,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "4d02797fa35fcb4a",
+        "type": "inject",
+        "z": "0ec30a985bffe47f",
+        "name": "Number",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "22",
+        "payloadType": "num",
+        "x": 150,
+        "y": 100,
+        "wires": [
+            [
+                "e25af6736fd7f763"
+            ]
+        ]
+    },
+    {
+        "id": "0ada83e47f3733ee",
+        "type": "inject",
+        "z": "0ec30a985bffe47f",
+        "name": "Name",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Nikki",
+        "payloadType": "str",
+        "x": 150,
+        "y": 180,
+        "wires": [
+            [
+                "e25af6736fd7f763"
+            ]
+        ]
+    },
+    {
+        "id": "e25af6736fd7f763",
+        "type": "function",
+        "z": "0ec30a985bffe47f",
+        "name": "Switch Implementation ",
+        "func": "var n = msg.payload;\n\nif (n == 22){\n    return [msg,null]\n}\n\nif (n== \"Nikki\"){\n    return [null,msg]\n}",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 140,
+        "wires": [
+            [
+                "211e9c9f804b245e"
+            ],
+            [
+                "234a8ebbf13a16d5"
+            ]
+        ]
+    },
+    {
+        "id": "211e9c9f804b245e",
+        "type": "debug",
+        "z": "0ec30a985bffe47f",
+        "name": "Date",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "234a8ebbf13a16d5",
+        "type": "debug",
+        "z": "0ec30a985bffe47f",
+        "name": "Name",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 770,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "4f694f682a72a69b",
         "type": "switch",
         "z": "0ec30a985bffe47f",
-        "name": "",
+        "name": "Payload Switch",
         "property": "payload",
         "propertyType": "msg",
         "rules": [
             {
                 "t": "eq",
-                "v": "1",
+                "v": "22",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "Nikki",
                 "vt": "str"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 1,
-        "x": 510,
-        "y": 240,
+        "outputs": 2,
+        "x": 480,
+        "y": 380,
         "wires": [
             [
-                "e3c84487ddd37bc0"
+                "211e9c9f804b245e"
+            ],
+            [
+                "234a8ebbf13a16d5"
             ]
         ]
     },
     {
-        "id": "51da17f2c44f2a97",
+        "id": "924adabb1a977d43",
         "type": "inject",
         "z": "0ec30a985bffe47f",
-        "name": "",
+        "name": "Number",
         "props": [
             {
                 "p": "payload"
@@ -651,51 +981,226 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "topic": "",
-        "payload": "true",
-        "payloadType": "bool",
-        "x": 210,
-        "y": 140,
-        "wires": [
-            [
-                "6c89d0bfb20fd2fb"
-            ]
-        ]
-    },
-    {
-        "id": "b95ee4fd03c33b2c",
-        "type": "inject",
-        "z": "0ec30a985bffe47f",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "false",
-        "payloadType": "bool",
-        "x": 190,
+        "topic": "NumberOnly",
+        "payload": "22",
+        "payloadType": "num",
+        "x": 150,
         "y": 320,
         "wires": [
             [
-                "6c89d0bfb20fd2fb"
+                "4f694f682a72a69b",
+                "2f9751da3cf2f80f"
             ]
         ]
     },
     {
-        "id": "e3c84487ddd37bc0",
-        "type": "debug",
+        "id": "7f6054b3287b0d59",
+        "type": "inject",
         "z": "0ec30a985bffe47f",
-        "name": "debug 12",
+        "name": "Name",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "UnknownOnly",
+        "payload": "Nikki",
+        "payloadType": "str",
+        "x": 150,
+        "y": 420,
+        "wires": [
+            [
+                "4f694f682a72a69b",
+                "2f9751da3cf2f80f"
+            ]
+        ]
+    },
+    {
+        "id": "2f9751da3cf2f80f",
+        "type": "switch",
+        "z": "0ec30a985bffe47f",
+        "name": "Topic Switch",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "NumberOnly",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "StringOnly",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 490,
+        "y": 520,
+        "wires": [
+            [
+                "211e9c9f804b245e"
+            ],
+            [
+                "234a8ebbf13a16d5"
+            ]
+        ]
+    },
+    {
+        "id": "902e3296afb499dc",
+        "type": "inject",
+        "z": "aa0be5d8fb5b13e9",
+        "name": "Info",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "Details",
+        "payload": "Nikki",
+        "payloadType": "str",
+        "x": 170,
+        "y": 100,
+        "wires": [
+            [
+                "a5e6e031c10063cc",
+                "2658118c23e24ef9",
+                "cc14231d5e1c4938",
+                "e508dc98bf82a270"
+            ]
+        ]
+    },
+    {
+        "id": "a5e6e031c10063cc",
+        "type": "change",
+        "z": "aa0be5d8fb5b13e9",
+        "name": "Set",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 430,
+        "y": 100,
+        "wires": [
+            [
+                "0ebfa501f4938ce7"
+            ]
+        ]
+    },
+    {
+        "id": "2658118c23e24ef9",
+        "type": "change",
+        "z": "aa0be5d8fb5b13e9",
+        "name": "Change",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "ki",
+                "fromt": "str",
+                "to": "ka",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 180,
+        "wires": [
+            [
+                "0ebfa501f4938ce7"
+            ]
+        ]
+    },
+    {
+        "id": "cc14231d5e1c4938",
+        "type": "change",
+        "z": "aa0be5d8fb5b13e9",
+        "name": "Delete",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "topic",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 450,
+        "y": 260,
+        "wires": [
+            [
+                "0ebfa501f4938ce7"
+            ]
+        ]
+    },
+    {
+        "id": "e508dc98bf82a270",
+        "type": "change",
+        "z": "aa0be5d8fb5b13e9",
+        "name": "Move",
+        "rules": [
+            {
+                "t": "move",
+                "p": "topic",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 450,
+        "y": 340,
+        "wires": [
+            [
+                "0ebfa501f4938ce7"
+            ]
+        ]
+    },
+    {
+        "id": "0ebfa501f4938ce7",
+        "type": "debug",
+        "z": "aa0be5d8fb5b13e9",
+        "name": "Output",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -704,24 +1209,227 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 760,
+        "x": 690,
         "y": 100,
         "wires": []
     },
     {
-        "id": "fdbf2057cfe9f7de",
+        "id": "b57844d67fefe3fb",
+        "type": "range",
+        "z": "a6d33dd70f458e63",
+        "minin": "4",
+        "maxin": "20",
+        "minout": "0",
+        "maxout": "500",
+        "action": "scale",
+        "round": false,
+        "property": "payload",
+        "name": "Transmitter",
+        "x": 450,
+        "y": 160,
+        "wires": [
+            [
+                "7a9c588ff3b1d5af"
+            ]
+        ]
+    },
+    {
+        "id": "a03e3d86781759da",
+        "type": "inject",
+        "z": "a6d33dd70f458e63",
+        "name": "Sensor",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "Thermocouple ",
+        "payload": "12",
+        "payloadType": "num",
+        "x": 130,
+        "y": 160,
+        "wires": [
+            [
+                "b57844d67fefe3fb"
+            ]
+        ]
+    },
+    {
+        "id": "7a9c588ff3b1d5af",
         "type": "debug",
-        "z": "0ec30a985bffe47f",
-        "name": "debug 13",
+        "z": "a6d33dd70f458e63",
+        "name": "PLC",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 760,
-        "y": 400,
+        "x": 770,
+        "y": 160,
         "wires": []
+    },
+    {
+        "id": "3d6b819a8d4e2ba2",
+        "type": "split",
+        "z": "7e3cb7c4656eebe4",
+        "name": "",
+        "splt": " ",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "topic",
+        "property": "payload",
+        "x": 470,
+        "y": 60,
+        "wires": [
+            [
+                "ee947034d972024b"
+            ]
+        ]
+    },
+    {
+        "id": "69e18ebbdca6463e",
+        "type": "inject",
+        "z": "7e3cb7c4656eebe4",
+        "name": "Array",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[\"N\",\"I\",\"K\",\"K\",\"I\"]",
+        "payloadType": "json",
+        "x": 170,
+        "y": 60,
+        "wires": [
+            [
+                "3d6b819a8d4e2ba2"
+            ]
+        ]
+    },
+    {
+        "id": "ee947034d972024b",
+        "type": "debug",
+        "z": "7e3cb7c4656eebe4",
+        "name": "Output",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "94f57da0505f92e3",
+        "type": "inject",
+        "z": "7e3cb7c4656eebe4",
+        "name": "String",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Nikki Escamillas",
+        "payloadType": "str",
+        "x": 170,
+        "y": 120,
+        "wires": [
+            [
+                "3d6b819a8d4e2ba2"
+            ]
+        ]
+    },
+    {
+        "id": "2d694007b5eeda4c",
+        "type": "inject",
+        "z": "7e3cb7c4656eebe4",
+        "name": "JSON",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"Nikki\":{\"Name\":\"Nikki\",\"Age\":22,\"City\":\"Lipa\"},\"Mika\":{\"Name\":\"Mika\",\"Age\":30,\"City\":\"Manda\"}}",
+        "payloadType": "json",
+        "x": 150,
+        "y": 200,
+        "wires": [
+            [
+                "3d6b819a8d4e2ba2"
+            ]
+        ]
+    },
+    {
+        "id": "65fc37f37748ec01",
+        "type": "inject",
+        "z": "7e3cb7c4656eebe4",
+        "name": "JSON",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"Name\":\"Nikki\",\"Age\":22,\"City\":\"Lipa\"}",
+        "payloadType": "json",
+        "x": 150,
+        "y": 280,
+        "wires": [
+            [
+                "3d6b819a8d4e2ba2"
+            ]
+        ]
     }
 ]
